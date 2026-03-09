@@ -1,0 +1,20 @@
+{
+  "short_name": "시즈오카",
+  "name": "시즈오카 2박 3일 여행 플래너",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#52B788",
+  "background_color": "#ffffff"
+}
