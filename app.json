@@ -32,7 +32,9 @@
       "themeColor": "#52B788",
       "backgroundColor": "#ffffff",
       "display": "standalone",
-      "description": "시즈오카 2박 3일 여행 플래너"
+      "description": "시즈오카 2박 3일 여행 플래너",
+      "name": "시즈오카 여행",
+      "shortName": "시즈오카"
     },
     "plugins": ["expo-font"],
     "extra": {
