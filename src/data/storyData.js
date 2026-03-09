@@ -1,0 +1,467 @@
+export const storyData = [
+  {
+    id: "s7",
+    title: "시즈오카 공항 도착 & 버스 탑승",
+    subtitle: "쾌적한 여행의 시작, 공항 입국장 가이드",
+    structuredContent: [
+      { type: "boldText", text: "✅ 공항에서 할 일" },
+      {
+        type: "bullet",
+        text: "세븐일레븐 ATM에서 현지 통화 환전 (트래블로그/쏠트래블 등)",
+      },
+      {
+        type: "bullet",
+        text: "세븐일레븐에서 간단한 간식(샌드위치, 음료) 구매",
+      },
+      { type: "text", text: "" },
+      { type: "boldText", text: "🚍 공항버스 탑승 안내" },
+      { type: "bullet", text: "3번 정류장에서 신시즈오카역행 버스 탑승" },
+      {
+        type: "bullet",
+        text: "팁: 탑승 시 뒷문에서 정리권(표) 뽑기 ➡️ 하차 시 앞문 요금함에 1,200엔과 정리권 지불",
+      },
+      {
+        type: "bullet",
+        text: "약 1시간 소요 / 좌석마다 USB 충전 가능, 무료 Wi-Fi 제공",
+      },
+      { type: "text", text: "" },
+      {
+        type: "boldText",
+        text: "📅 공항 → 시내 버스 시간표 (25/10/26~26/3/28)",
+      },
+      {
+        type: "table",
+        headers: ["공항 출발", "시즈오카역", "신시즈오카"],
+        rows: [
+          ["10:00", "10:57", "11:00"],
+          ["11:45", "12:42", "12:45"],
+          ["12:35", "13:32", "13:35"],
+          ["13:45", "14:42", "14:45"],
+          ["16:55", "17:52", "17:55"],
+          ["18:50", "19:47", "19:50"],
+          ["20:00", "20:57", "21:00"],
+          ["21:00", "21:57", "22:00"],
+        ],
+      },
+    ],
+    images: [require("../../assets/10-00.jpg")],
+  },
+  {
+    id: "s8",
+    title: "시즈오카역 숙소 가이드",
+    subtitle: "여행의 편의를 결정하는 베이스캠프",
+    structuredContent: [
+      {
+        type: "text",
+        text: "현재 숙소는 시즈오카역 인근으로 예정되어 있습니다. 역 북쪽이나 신시즈오카역 근처라면 도보로 시내 주요 포인트를 이동하기 최적입니다.",
+      },
+      {
+        type: "text",
+        text: "💡 메모: 숙소가 확정되면 상세한 위치와 체크인 정보를 이곳에 업데이트할 예정입니다.",
+      },
+    ],
+    imagePlaceholder: "시즈오카역 풍경",
+  },
+  {
+    id: "s9",
+    title: "첫날 점심 선택지",
+    subtitle: "시즈오카의 대표 메뉴, 함바그 vs 참치",
+    structuredContent: [
+      { type: "boldText", text: "🍖 Option 1 — 사와야카 함바그" },
+      { type: "bullet", text: "시즈오카 현에만 있는 최고의 인기 함바그 체인" },
+      {
+        type: "bullet",
+        text: "중요: 도착하자마자 대기표(정리권)를 받는 것이 필수",
+      },
+      {
+        type: "bullet",
+        text: "추천: 주먹 함바그 (직원이 직접 잘라주는 퍼포먼스)",
+      },
+      { type: "bullet", text: "예상 비용: 1인 약 1,200엔~1,500엔" },
+      {
+        type: "bullet",
+        text: "체크: 웨이팅 확인 후 너무 길면 바로 Option 2로 전환!",
+      },
+      { type: "text", text: "" },
+      { type: "boldText", text: "🐟 Option 2 — 놋케야" },
+      { type: "bullet", text: "신선하고 저렴한 참치 덮밥(마구로동) 전문점" },
+      {
+        type: "bullet",
+        text: "날것이 부담된다면 하프 사이즈로 가볍게 시도 가능",
+      },
+      { type: "bullet", text: "예상 비용: 하프 600엔 / 일반 1,200엔" },
+      { type: "bullet", text: "체크: 부담 없는 메뉴 선택으로 빠른 식사 가능" },
+    ],
+    images: [
+      require("../../assets/11-00-1.jpg"),
+      require("../../assets/11-00-2.jpg"),
+    ],
+  },
+  {
+    id: "s1",
+    title: "고후쿠초 거리 산책 & 나나야",
+    subtitle: "도시의 호흡을 느끼며 진한 녹차 한 입",
+    structuredContent: [
+      { type: "boldText", text: "✅ 할 일" },
+      { type: "bullet", text: "고후쿠초 거리의 아기자기한 골목 산책" },
+      { type: "bullet", text: "예쁜 골목길 배경으로 감성 사진 남기기" },
+      {
+        type: "bullet",
+        text: "나나야(なな야) 들러서 세상에서 가장 진한 말차 젤라또 먹기",
+      },
+      { type: "text", text: "" },
+      { type: "boldText", text: "🍦 나나야 젤라또 가격표" },
+      { type: "bullet", text: "기본 싱글컵: 380엔" },
+      { type: "bullet", text: "기본 더블컵: 490엔" },
+      { type: "bullet", text: "기본 트리플컵: 680엔" },
+      { type: "bullet", text: "No.7 포함 싱글: 580엔" },
+      { type: "bullet", text: "No.7 포함 더블: 680엔" },
+      { type: "bullet", text: "No.7 포함 트리플: 800엔" },
+      { type: "text", text: "" },
+      { type: "boldText", text: "💰 예상 비용: 1인 380~800엔" },
+      {
+        type: "text",
+        text: "말차를 좋아한다면 No.7 단계를 꼭 드셔보세요. 첫날 디저트 포인트로 최고입니다.",
+      },
+    ],
+    images: [require("../../assets/13-30.webp")],
+  },
+  {
+    id: "s24",
+    title: "와사비의 근구, 타마루야 본점",
+    subtitle: "시즈오카 특산품 와사비 기념품 추천",
+    structuredContent: [
+      { type: "boldText", text: "🛍️ 추천 리스트 & 가격" },
+      { type: "bullet", text: "와사비 소금: 291엔 (스테이크와 찰떡궁합!)" },
+      { type: "bullet", text: "와사비 검정: 518엔" },
+      { type: "bullet", text: "와사비 흰색: 583엔" },
+      { type: "bullet", text: "생와사비 페이스트 및 각종 절임류" },
+      { type: "text", text: "" },
+      {
+        type: "text",
+        text: "💡 꿀팁: 여기서 못 샀더라도 다음날 가는 이온몰 후지노미야점에서도 구매 가능하니 조바심 내지 않으셔도 됩니다!",
+      },
+    ],
+    images: [require("../../assets/15-00.jpg")],
+  },
+  {
+    id: "s3",
+    title: "미호노 마츠바라",
+    subtitle: "후지산과 소나무 숲이 만나는 일본의 원풍경",
+    structuredContent: [
+      {
+        type: "text",
+        text: "약 3만 그루의 소나무와 푸른 바다, 그리고 그 너머로 보이는 후지산이 전설 속 분위기를 자아냅니다.",
+      },
+      {
+        type: "text",
+        text: "💡 포인트: 해질녘 일몰 시간에 맞춰 방문하면 소나무 기둥 사이로 쏟아지는 황금빛 햇살과 후지산의 조화가 예술입니다. '하나고로모 노 마츠' 전설이 깃든 소나무 앞에서도 사진을 꼭 남기세요.",
+      },
+    ],
+    images: [require("../../assets/17-30.jpg")],
+  },
+  {
+    id: "s4",
+    title: "시미즈 마구로관 저녁식사",
+    subtitle: "시미즈항에서 맛보는 신선한 해산물의 향연",
+    structuredContent: [
+      { type: "boldText", text: "😋 추천 메뉴" },
+      {
+        type: "bullet",
+        text: "사쿠라에비(벚꽃새우) 튀김: 시즈오카 최고의 명물!",
+      },
+      { type: "bullet", text: "특선 회 덮밥: 현지 신선함의 정수" },
+      { type: "bullet", text: "해산물 텐동: 바삭한 바다의 맛" },
+      { type: "text", text: "" },
+      { type: "boldText", text: "💰 예상 비용: 1인 약 1,700엔" },
+    ],
+    images: [require("../../assets/18-30.jpg")],
+  },
+  {
+    id: "s10",
+    title: "아오바 오뎅거리",
+    subtitle: "시즈오카만의 검은 국물 오뎅과 시원한 맥주",
+    structuredContent: [
+      { type: "boldText", text: "🍢 꼭 먹어볼 메뉴" },
+      { type: "bullet", text: "흑한펜: 시즈오카만의 검은 어묵" },
+      { type: "bullet", text: "규스지(소힘줄)와 잘 졸여진 무" },
+      { type: "text", text: "" },
+      {
+        type: "text",
+        text: "💡 포인트: 가게마다 개성이 있으니 끌리는 곳으로 들어가 보세요. 사장님과의 짧은 인사도 여행의 묘미입니다.",
+      },
+    ],
+    images: [require("../../assets/20-00.png")],
+  },
+  {
+    id: "s5",
+    title: "후지산 꿈의 대교",
+    subtitle: "계단이 후지산으로 이어지는 듯 보이는 명소",
+    structuredContent: [
+      {
+        type: "text",
+        text: "이 다리는 국도 139호와 1호를 잇는 도로교인데, 위에 서면 건물과 전선에 가리지 않은 후지산 정면 뷰가 열립니다.",
+      },
+      {
+        type: "text",
+        text: "계단이 마치 후지산으로 이어지는 것처럼 보여서 사진 포인트로 크게 알려졌어요.",
+      },
+      {
+        type: "text",
+        text: "💡 포인트: 사람이 적은 오전 초반에 인생샷을 확보하세요.",
+      },
+    ],
+    images: [require("../../assets/4-13-07-40.jpg")],
+  },
+  {
+    id: "s12",
+    title: "상점가와 후지산의 조화, 후지 혼초",
+    subtitle: "일상의 풍경 뒤로 솟아오른 거대한 산",
+    structuredContent: [
+      {
+        type: "text",
+        text: "레트로한 일본의 상점가 길목 끝에 거대한 후지산이 있는 비현실적인 사진을 건질 수 있는 곳입니다.",
+      },
+      {
+        type: "text",
+        text: "💡 포인트: 횡단보도나 갓길에서 줌을 길게 당겨 원근감을 살려보세요.",
+      },
+    ],
+    images: [require("../../assets/4-13-09-00.webp")],
+  },
+  {
+    id: "s13",
+    title: "후지노미야 니지야미미",
+    subtitle: "시즈오카 B급 구루메, 야키소바 명소",
+    structuredContent: [
+      { type: "boldText", text: "😋 니지야미미 추천 메뉴 & 가격" },
+      { type: "bullet", text: "믹스 야키소바: 900엔" },
+      { type: "bullet", text: "시구레 믹스: 1,100엔" },
+      { type: "bullet", text: "기본 야키소바 / 오코노미야키: 600엔" },
+      { type: "bullet", text: "토핑 추가: +100엔 / +250엔" },
+      { type: "bullet", text: "음료: 150엔" },
+      { type: "bullet", text: "캔맥주/하이볼/레몬사와: 380엔" },
+      { type: "text", text: "" },
+      { type: "boldText", text: "💰 예상 비용" },
+      { type: "bullet", text: "식사 1인: 900~1,300엔" },
+      { type: "bullet", text: "간단 음료 포함 시: 1,050~1,680엔" },
+    ],
+    images: [require("../../assets/4-13-10-00.png")],
+  },
+  {
+    id: "s6",
+    title: "타누키 호수",
+    subtitle: "호수와 후지산이 한 화면에 정리되는 자연 풍경",
+    structuredContent: [
+      {
+        type: "text",
+        text: "아사기리 고원의 호수로 후지산 정면 뷰가 아름답습니다.",
+      },
+      {
+        type: "text",
+        text: "💡 포인트: 고요한 웅장함을 감상하기 좋은 힐링 자리입니다.",
+      },
+    ],
+    images: [
+      require("../../assets/4-13-11-20.jpg"),
+      require("../../assets/4-13-12-05.webp"),
+    ],
+  },
+  {
+    id: "s14",
+    title: "이온몰 후지노미야점",
+    subtitle: "면세 쇼핑과 기념품 털기",
+    structuredContent: [
+      { type: "boldText", text: "🛍️ 면세 체크 포인트" },
+      {
+        type: "bullet",
+        text: "1일 최소 5,000엔 / 최대 500,000엔 (세금 미포함 기준)",
+      },
+      { type: "bullet", text: "필수 준비물: 여권, 여권과 동일 명의 카드" },
+      { type: "text", text: "" },
+      { type: "boldText", text: "💰 예상 비용" },
+      { type: "bullet", text: "쇼핑 예산: 최소 5,000엔 이상 권장 (면세 혜택)" },
+    ],
+    images: [require("../../assets/4-13-16-30.jpg")],
+  },
+  {
+    id: "s15",
+    title: "이다텐 라멘",
+    subtitle: "깔끔하고 깊은 국물의 매력",
+    structuredContent: [
+      { type: "boldText", text: "🍜 추천 메뉴" },
+      { type: "bullet", text: "유자 소금 라면: 900엔" },
+      { type: "bullet", text: "숯불구이 아부리 고기 소바: 980엔" },
+      { type: "bullet", text: "소금 라면: 700엔" },
+      { type: "text", text: "" },
+      { type: "boldText", text: "💰 예상 비용: 1인 700~980엔" },
+    ],
+    images: [require("../../assets/4-13-19-30.jpg")],
+  },
+  {
+    id: "s16",
+    title: "하카타 카와야 시즈오카점",
+    subtitle: "쫀득바삭한 닭껍질 꼬치와 하이볼",
+    structuredContent: [
+      { type: "boldText", text: "🍢 추천 메뉴" },
+      {
+        type: "bullet",
+        text: "닭껍질 1본: 187엔 / 5본: 907엔 / 10본: 1,815엔",
+      },
+      { type: "bullet", text: "시기구이(안심 와사비): 242엔" },
+      { type: "bullet", text: "오뎅 3종: 693엔" },
+      { type: "bullet", text: "한입 만두(10개): 616엔" },
+      { type: "bullet", text: "구운 라면: 858엔" },
+      { type: "bullet", text: "안주류: 400~800엔대" },
+      { type: "text", text: "" },
+      { type: "boldText", text: "💰 예상 비용" },
+      { type: "bullet", text: "가볍게 먹으면: 1,500~2,000엔" },
+      { type: "bullet", text: "술 포함하면: 2,000~3,000엔" },
+      { type: "text", text: "" },
+      { type: "boldText", text: "✅ 체크" },
+      { type: "bullet", text: "닭껍질 먼저 주문하기" },
+      { type: "bullet", text: "술 양 조절 및 컨디션 체크" },
+    ],
+    images: [require("../../assets/4-13-21-00.jpg")],
+  },
+  {
+    id: "s18",
+    title: "시즈오카 센겐 신사",
+    subtitle: "이에야스가 사랑한 화려한 칠교의 신사",
+    structuredContent: [
+      {
+        type: "text",
+        text: "시즈오카 센겐 신사는 칸베 신사, 아사마 신사, 오호치 신사 세 곳을 통칭하는 웅장한 신사군입니다. 도쿠가와 이에야스가 원복(성인식)을 치른 곳으로 유명하며, 그가 끔찍이 아꼈던 곳이기도 합니다.",
+      },
+      { type: "text", text: "" },
+      { type: "boldText", text: "✨ 이곳에서 얻을 수 있는 행운" },
+      {
+        type: "bullet",
+        text: "입신양명 & 승부운: 이에야스의 기운을 받아 중요한 시험이나 비즈니스 성공을 기원하기 좋습니다.",
+      },
+      {
+        type: "bullet",
+        text: "가내안전 & 인연: 고대부터 수호신으로 추앙받아 온 만큼, 가족의 평안과 소중한 인연을 맺어준다고 알려져 있습니다.",
+      },
+      { type: "text", text: "" },
+      {
+        type: "text",
+        text: "💡 포인트: '칠교(漆巧)'라 불리는 화려한 옻칠 건물과 정교한 목조 조각들을 놓치지 마세요. 시즈오카 시내에서 가장 강력한 '파워 스팟' 중 하나입니다.",
+      },
+    ],
+    images: [require("../../assets/4-14-10-00.avif")],
+  },
+  {
+    id: "s19",
+    title: "슨푸성 공원 & 현청 전망대",
+    subtitle: "역사의 흔적 위에서 마주하는 후지산 파노라마",
+    structuredContent: [
+      { type: "boldText", text: "🏰 슨푸성 공원" },
+      {
+        type: "text",
+        text: "도쿠가와 이에야스가 은퇴 후 여생을 보낸 슨푸성이 있던 자리입니다. 지금은 아름다운 해자와 성곽, 복원된 동문 일대가 공원으로 조성되어 시민들의 쉼터가 되었습니다. 성터를 거닐며 일본 전국 시대를 통일한 영웅의 숨결을 느껴보세요.",
+      },
+      { type: "text", text: "" },
+      { type: "boldText", text: "🏙️ 현청 별관 21층 전망대" },
+      {
+        type: "text",
+        text: "공원 바로 옆 현청 건물 21층에는 무료 전망 로비가 있습니다. 이곳은 시즈오카 시내에서 가장 탁 트인 전망을 자랑하며, 슨푸성 공원의 전경은 물론 멀리 스루가만과 웅장한 후지산이 손에 잡힐 듯 보입니다.",
+      },
+      { type: "text", text: "" },
+      {
+        type: "text",
+        text: "💡 포인트: 전망대 로비에 비치된 망원경으로 시내 곳곳을 찾아보세요. 날씨가 좋으면 남알프스의 능선까지 감상할 수 있습니다.",
+      },
+    ],
+    images: [
+      require("../../assets/4-14-11-00-1.jpg"),
+      require("../../assets/4-14-11-00-2.jpg"),
+    ],
+  },
+  {
+    id: "s20",
+    title: "마지막 날 점심 선택지",
+    subtitle: "푸짐한 정식 vs 섬세한 테우치 소바",
+    structuredContent: [
+      { type: "boldText", text: "🍱 Option 1 — 대중식당 테이쇼쿠노 마루다이" },
+      {
+        type: "bullet",
+        text: "가다랑어회 정식: 1,200엔 (시즈오카 제철의 맛!)",
+      },
+      { type: "bullet", text: "해산물 덮밥: 1,250엔" },
+      { type: "bullet", text: "요일 한정 정식: 1,000엔" },
+      {
+        type: "text",
+        text: "현지인들에게 사랑받는 노포 스타일로, 정겨운 분위기에서 든든한 한 끼를 즐기기 좋습니다.",
+      },
+      { type: "text", text: "" },
+      { type: "boldText", text: "🥢 Option 2 — 테우치 소바 다가타" },
+      { type: "bullet", text: "10할(쥬와리) 모리 소바: 1,000엔" },
+      { type: "bullet", text: "새우와 야채 튀김 덮밥: 1,300엔" },
+      {
+        type: "text",
+        text: "메밀 본연의 향이 살아있는 수제 소바 전문점입니다. 깔끔하고 깔끔한 맛을 선호하신다면 탁월한 선택입니다.",
+      },
+    ],
+    images: [
+      require("../../assets/4-14-12-00-1.jpg"),
+      require("../../assets/4-14-12-00-2.jpg"),
+    ],
+  },
+  {
+    id: "s21",
+    title: "키르훼봉 시즈오카 본점",
+    subtitle: "파스텔 톤 과일 타르트의 황홀함",
+    structuredContent: [
+      {
+        type: "text",
+        text: "일본 전역에서 사랑받는 타르트 전문점 '키르훼봉'의 본점에서 여행의 마지막 달콤함을 만끽하세요.",
+      },
+      { type: "text", text: "" },
+      { type: "boldText", text: "💰 예상 비용" },
+      {
+        type: "bullet",
+        text: "조각 타르트: 700~900엔 (계절 과일에 따라 상이)",
+      },
+      { type: "bullet", text: "타르트 + 음료 세트: 약 1,300엔 내외" },
+      { type: "text", text: "" },
+      {
+        type: "text",
+        text: "💡 포인트: 쇼케이스에 진열된 보석 같은 타르트들은 보기만 해도 행복해집니다. 본점만의 아늑한 분위기에서 여유를 즐겨보세요.",
+      },
+    ],
+    images: [require("../../assets/4-14-13-30.jpg")],
+  },
+  {
+    id: "s23",
+    title: "시내 → 공항 버스 시간표",
+    subtitle: "여행을 마무리하며 공항으로 향하는 길",
+    structuredContent: [
+      {
+        type: "text",
+        text: "시내 주요 거점에서 공항으로 향하는 버스 시간표입니다. 귀국편 시간에 맞춰 여유 있게 이동하세요.",
+      },
+      { type: "text", text: "" },
+      { type: "boldText", text: "🚍 공항행 버스 상세 시간표" },
+      {
+        type: "table",
+        headers: ["신시즈오카(6)", "시즈오카역(14)", "공항 도착"],
+        rows: [
+          ["06:11", "06:15", "07:06"],
+          ["07:21", "07:25", "08:16"],
+          ["09:31", "09:35", "10:26"],
+          ["10:55", "10:59", "11:50"],
+          ["11:51", "11:55", "12:46"],
+          ["13:01", "13:05", "13:56"],
+          ["15:51", "15:55", "16:46"],
+          ["17:01", "17:05", "17:56"],
+        ],
+      },
+      {
+        type: "text",
+        text: "* 도메이 IC 등 중간 경유지 정보는 실시간 안내판을 참고해 주세요.",
+      },
+    ],
+    images: [require("../../assets/4-14-15-15.webp")],
+  },
+];
