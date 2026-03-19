@@ -5,18 +5,23 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
-  ScrollView,
+  Linking,
 } from "react-native";
 import { CheckCircle2, Circle, BookOpen } from "lucide-react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { theme } from "../constants/theme";
 import { scheduleData } from "../data/scheduleData";
+import { storyData } from "../data/storyData";
 
 const STORAGE_KEY = "@shizuoka_schedule_done";
 
 export default function ScheduleScreen({ navigation }) {
   const [activeDay, setActiveDay] = useState("day1");
   const [schedule, setSchedule] = useState(scheduleData);
+  const validStoryIds = React.useMemo(
+    () => new Set(storyData.map((story) => story.id)),
+    [],
+  );
 
   // Load persistence data on mount
   useEffect(() => {
@@ -70,6 +75,15 @@ export default function ScheduleScreen({ navigation }) {
     }
   };
 
+  const openMap = async (url) => {
+    if (!url) return;
+    try {
+      await Linking.openURL(url);
+    } catch (e) {
+      console.error("Failed to open map url", e);
+    }
+  };
+
   const renderTab = (dayKey, label) => (
     <TouchableOpacity
       style={[styles.tab, activeDay === dayKey && styles.activeTab]}
@@ -112,17 +126,27 @@ export default function ScheduleScreen({ navigation }) {
 
         <View style={styles.cardFooter}>
           <Text style={styles.cardCost}>예상: {item.cost}</Text>
-          {item.storyId && (
-            <TouchableOpacity
-              style={styles.storyLinkBtn}
-              onPress={() =>
-                navigation.navigate("Story", { storyId: item.storyId })
-              }
-            >
-              <BookOpen color={theme.colors.primary} size={14} />
-              <Text style={styles.storyLinkText}>상세보기</Text>
-            </TouchableOpacity>
-          )}
+          <View style={styles.rightActionGroup}>
+            {item.storyId && validStoryIds.has(item.storyId) && (
+              <TouchableOpacity
+                style={styles.storyLinkBtn}
+                onPress={() =>
+                  navigation.navigate("Story", { storyId: item.storyId })
+                }
+              >
+                <BookOpen color={theme.colors.primary} size={14} />
+                <Text style={styles.storyLinkText}>상세보기</Text>
+              </TouchableOpacity>
+            )}
+            {item.mapUrl && (
+              <TouchableOpacity
+                style={styles.mapLinkBtn}
+                onPress={() => openMap(item.mapUrl)}
+              >
+                <Text style={styles.mapLinkText}>이동하기</Text>
+              </TouchableOpacity>
+            )}
+          </View>
         </View>
       </TouchableOpacity>
     </View>
@@ -153,10 +177,12 @@ const styles = StyleSheet.create({
   tabContainer: {
     flexDirection: "row",
     backgroundColor: theme.colors.surface,
+    borderBottomWidth: 1,
+    borderBottomColor: theme.colors.border,
     elevation: 2,
-    shadowColor: "#000",
+    shadowColor: theme.colors.shadow,
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 1,
     shadowRadius: 2,
   },
   tab: {
@@ -212,11 +238,15 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.surface,
     borderRadius: theme.borderRadius.md,
     padding: theme.spacing.md,
-    borderWidth: 2, // Bolder border
-    borderColor: "#B7E4C7", // Slightly more defined Spring Green
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+    shadowColor: theme.colors.shadow,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 1,
+    shadowRadius: 12,
   },
   cardDone: {
-    backgroundColor: "#f5f5f5",
+    backgroundColor: theme.colors.surfaceMuted,
     opacity: 0.8,
   },
   cardHeader: {
@@ -249,13 +279,30 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 4,
   },
+  rightActionGroup: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-end",
+  },
   storyLinkBtn: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#F3F4F6", // Neutral light gray
+    backgroundColor: theme.colors.primarySoft,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 12,
+  },
+  mapLinkBtn: {
+    backgroundColor: theme.colors.primary,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
+    marginLeft: 8,
+  },
+  mapLinkText: {
+    fontSize: 12,
+    color: "#fff",
+    fontWeight: "700",
   },
   storyLinkText: {
     fontSize: 12,

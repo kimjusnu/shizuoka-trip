@@ -7,6 +7,7 @@ export const scheduleData = {
       desc: "입국·수하물 수령. 아침은 요시노야나 다시차즈케 엔 등 역내 식당에서 유동적으로 조율.",
       cost: "약 1,000엔",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/47D7uzYH1UXGVkdZ9",
     },
     {
       id: "1-2",
@@ -16,24 +17,27 @@ export const scheduleData = {
       cost: "1,200엔",
       done: false,
       storyId: "s7",
+      mapUrl: "https://maps.app.goo.gl/UdzAMvXTZkc3VKwn7",
     },
     {
       id: "1-3",
       time: "11:00",
-      title: "숙소 짐 보관",
+      title: "숙소 짐 보관 (KOKO HOTEL시즈오카)",
       desc: "시즈오카역 북쪽~신시즈오카 권역 숙소면 가장 편합니다.",
       cost: "-",
       done: false,
       storyId: "s8",
+      mapUrl: "https://maps.app.goo.gl/WFekzaNTwCfeJcjPA",
     },
     {
       id: "1-4",
       time: "11:30",
       title: "점심 식사",
-      desc: "Option 1: 사와야카 함바그(대기 필수) / Option 2: 놋케야(참치 덮밥).",
+      desc: "Option 1: 사와야카 함바그(대기 필수) / Option 2: 놋케야(참치 덮밥). 근처 텐동·오코노미야키·나베도 있어 대기 상황에 따라 유동적으로 조정.",
       cost: "1,200엔",
       done: false,
       storyId: "s9",
+      mapUrl: "https://maps.app.goo.gl/by6Wojv5r6xsqe749",
     },
     {
       id: "1-5",
@@ -43,6 +47,7 @@ export const scheduleData = {
       cost: "380~800엔",
       done: false,
       storyId: "s1",
+      mapUrl: "https://maps.app.goo.gl/LTNeEaDKUSy53E5j7",
     },
     {
       id: "1-6",
@@ -52,6 +57,7 @@ export const scheduleData = {
       cost: "개인차",
       done: false,
       storyId: "s24",
+      mapUrl: "https://maps.app.goo.gl/pfyGQsqT97HhKyqbA",
     },
     {
       id: "1-7",
@@ -60,6 +66,7 @@ export const scheduleData = {
       desc: "JR 시즈오카역 → JR 시미즈역(240엔) → 서쪽출구 3번 → 三保山の手線.",
       cost: "630엔",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/f4R1jiv54mgrLXcU9",
     },
     {
       id: "1-8",
@@ -69,6 +76,7 @@ export const scheduleData = {
       cost: "-",
       done: false,
       storyId: "s3",
+      mapUrl: "https://maps.app.goo.gl/RwVeUcngJu1ifcN48",
     },
     {
       id: "1-9",
@@ -78,6 +86,7 @@ export const scheduleData = {
       cost: "1,700엔",
       done: false,
       storyId: "s4",
+      mapUrl: "https://maps.app.goo.gl/Rm4HvMmChBa6rNhA6",
     },
     {
       id: "1-10",
@@ -87,6 +96,7 @@ export const scheduleData = {
       cost: "1,500~4,000엔",
       done: false,
       storyId: "s10",
+      mapUrl: "https://maps.app.goo.gl/ei4XrDVNjzgwcs9KA",
     },
   ],
   day2: [
@@ -97,6 +107,7 @@ export const scheduleData = {
       desc: "JR 도카이도 본선으로 후지역 이동. 아침 공기 맑을수록 후지산 확률이 좋아집니다.",
       cost: "590엔",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/UdzAMvXTZkc3VKwn7",
     },
     {
       id: "2-2",
@@ -106,6 +117,7 @@ export const scheduleData = {
       cost: "-",
       done: false,
       storyId: "s5",
+      mapUrl: "https://maps.app.goo.gl/Y5aiNbbdDNH1X9HW7",
     },
     {
       id: "2-3",
@@ -115,15 +127,17 @@ export const scheduleData = {
       cost: "-",
       done: false,
       storyId: "s12",
+      mapUrl: "https://maps.app.goo.gl/75jbnHx7PRftYFTY6",
     },
     {
       id: "2-4",
       time: "10:00",
-      title: "후지노미야 이동 + 아점",
-      desc: "니지야미미에서 야키소바. 식후 여유 있으면 세계유산센터 짧게.",
+      title: "후지노미야역 도착 + 아점",
+      desc: "역에서 타누키호수행 버스 시간표를 먼저 확인한 뒤 니지야미미에서 식사(야키소바/오코노미야키).",
       cost: "240엔 + 식비",
       done: false,
       storyId: "s13",
+      mapUrl: "https://maps.app.goo.gl/krtXJt6pgSHkQmcm7",
     },
     {
       id: "2-5",
@@ -132,6 +146,7 @@ export const scheduleData = {
       desc: "후지노미야역 → 休暇村富士(타누키호수 최寄). (토休日 특급)",
       cost: "약 840엔",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/hp2TzzS8wQYRNC8L9",
     },
     {
       id: "2-6",
@@ -141,6 +156,7 @@ export const scheduleData = {
       cost: "-",
       done: false,
       storyId: "s6",
+      mapUrl: "https://maps.app.goo.gl/YttzHKvaVexysURa8",
     },
     {
       id: "2-7",
@@ -149,6 +165,7 @@ export const scheduleData = {
       desc: "休暇村富士 출발 → 15:10 후지노미야역 도착",
       cost: "약 840엔",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/hp2TzzS8wQYRNC8L9",
     },
     {
       id: "2-8",
@@ -158,6 +175,7 @@ export const scheduleData = {
       cost: "개인차",
       done: false,
       storyId: "s14",
+      mapUrl: "https://maps.app.goo.gl/23jEnpZfhXMBEoDPA",
     },
     {
       id: "2-9",
@@ -166,6 +184,7 @@ export const scheduleData = {
       desc: "JR 환승 후 숙소 잠깐 정비.",
       cost: "840엔",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/UdzAMvXTZkc3VKwn7",
     },
     {
       id: "2-10",
@@ -175,6 +194,7 @@ export const scheduleData = {
       cost: "700~980엔",
       done: false,
       storyId: "s15",
+      mapUrl: "https://maps.app.goo.gl/TpMeMenJB1DyfMas7",
     },
     {
       id: "2-11",
@@ -184,16 +204,18 @@ export const scheduleData = {
       cost: "2,000엔+",
       done: false,
       storyId: "s16",
+      mapUrl: "https://maps.app.goo.gl/v4qVcU4aX1hsbfy58",
     },
   ],
   day3: [
     {
       id: "3-1",
       time: "08:30",
-      title: "아침 식사",
-      desc: "요시노야, 다시차즈케 엔 등 시즈오카역 내 식당 이용. 컨디션 따라 유동적 조율.",
-      cost: "약 1,000엔",
+      title: "호텔 조식",
+      desc: "KOKO HOTEL 시즈오카 조식 이용.",
+      cost: "신청 완료",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/WFekzaNTwCfeJcjPA",
     },
     {
       id: "3-2",
@@ -203,6 +225,7 @@ export const scheduleData = {
       cost: "-",
       done: false,
       storyId: "s18",
+      mapUrl: "https://maps.app.goo.gl/2oATwWQhzofJq8cZ8",
     },
     {
       id: "3-3",
@@ -212,6 +235,7 @@ export const scheduleData = {
       cost: "무료",
       done: false,
       storyId: "s19",
+      mapUrl: "https://maps.app.goo.gl/exsdd3mz4ptyDFeP9",
     },
     {
       id: "3-4",
@@ -221,6 +245,7 @@ export const scheduleData = {
       cost: "1,200~1,500엔",
       done: false,
       storyId: "s20",
+      mapUrl: "https://maps.app.goo.gl/bMi9hEaWNbFGSgmaA",
     },
     {
       id: "3-5",
@@ -230,6 +255,7 @@ export const scheduleData = {
       cost: "700~900엔",
       done: false,
       storyId: "s21",
+      mapUrl: "https://maps.app.goo.gl/sFtFidobk2vskuc37",
     },
     {
       id: "3-6",
@@ -238,6 +264,7 @@ export const scheduleData = {
       desc: "못 산 생활용품·잡화 마지막 체크.",
       cost: "개인차",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/6Wgx9t9L5tNASRyM6",
     },
     {
       id: "3-7",
@@ -246,6 +273,7 @@ export const scheduleData = {
       desc: "15:15 버스를 탈 거면 14:40 전후에는 역 근처로 복귀하는 게 편함.",
       cost: "-",
       done: false,
+      mapUrl: "https://maps.app.goo.gl/WFekzaNTwCfeJcjPA",
     },
     {
       id: "3-8",
@@ -255,6 +283,7 @@ export const scheduleData = {
       cost: "1,200엔",
       done: false,
       storyId: "s23",
+      mapUrl: "https://maps.app.goo.gl/n7nBj9hBtqVoVbam7",
     },
     {
       id: "3-9",

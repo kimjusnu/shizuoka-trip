@@ -1,12 +1,24 @@
 {
-  "short_name": "시즈오카 여행",
+  "short_name": "시즈오카 플래너",
   "name": "시즈오카 여행 플래너",
   "icons": [
     {
-      "src": "icon.png",
-      "sizes": "1024x1024",
+      "src": "AppIcon.png",
+      "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "AppIcon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "AppIcon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": ".",

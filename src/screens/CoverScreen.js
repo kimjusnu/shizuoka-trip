@@ -15,7 +15,6 @@ import {
   Calendar,
   Users,
   ChevronRight,
-  CheckCircle2,
 } from "lucide-react-native";
 import { theme } from "../constants/theme";
 
@@ -44,11 +43,9 @@ export default function CoverScreen({ navigation }) {
               onPress={() => navigation.navigate("MainTabs")}
               activeOpacity={0.7}
             >
-              <View style={[styles.badge, { backgroundColor: "#FFEDF0" }]}>
+              <View style={styles.badge}>
                 <Plane color={theme.colors.accent} size={14} />
-                <Text style={[styles.badgeText, { color: "#C9184A" }]}>
-                  시즈오카 여행 플래너
-                </Text>
+                <Text style={styles.badgeText}>시즈오카 여행 플래너</Text>
               </View>
               <Text style={styles.title}>
                 시즈오카 <Text style={styles.titleHighlight}>2박 3일</Text>
@@ -171,8 +168,8 @@ export default function CoverScreen({ navigation }) {
 
           {/* Day Summary Cards */}
           <View style={styles.summaryContainer}>
-            <View style={[styles.dayCard, { borderTopColor: "#95D5B2" }]}>
-              <Text style={[styles.dayTitle, { color: "#40916C" }]}>
+            <View style={styles.dayCard}>
+              <Text style={styles.dayTitle}>
                 Day 1 <Text style={styles.dayDate}>4.12(일)</Text>
               </Text>
               <Text style={styles.dayTheme}>시내 투어 & 미호 해변 일몰</Text>
@@ -180,8 +177,8 @@ export default function CoverScreen({ navigation }) {
                 #미호노마츠바라 #사와야카함바그 #나나야녹차
               </Text>
             </View>
-            <View style={[styles.dayCard, { borderTopColor: "#74C69D" }]}>
-              <Text style={[styles.dayTitle, { color: "#2D6A4F" }]}>
+            <View style={styles.dayCard}>
+              <Text style={styles.dayTitle}>
                 Day 2 <Text style={styles.dayDate}>4.13(월)</Text>
               </Text>
               <Text style={styles.dayTheme}>
@@ -192,9 +189,9 @@ export default function CoverScreen({ navigation }) {
               </Text>
             </View>
             <View
-              style={[styles.dayCard, { borderTopColor: theme.colors.accent }]}
+              style={[styles.dayCard, styles.dayCardAccent]}
             >
-              <Text style={[styles.dayTitle, { color: "#C06C84" }]}>
+              <Text style={[styles.dayTitle, styles.dayTitleAccent]}>
                 Day 3 <Text style={styles.dayDate}>4.14(화)</Text>
               </Text>
               <Text style={styles.dayTheme}>슨푸성 산책 & 디저트 쇼핑</Text>
@@ -223,16 +220,16 @@ const styles = StyleSheet.create({
   container: {
     height: Platform.OS === "web" ? "100vh" : "100%",
     width: "100%",
-    backgroundColor: "#F5F7FA",
+    backgroundColor: theme.colors.background,
   },
   safeContainer: {
     flex: 1,
   },
   content: {
     flex: 1,
-    padding: 20, // Reduced padding
-    justifyContent: "space-evenly", // Changed to evenly space items
-    backgroundColor: "rgba(255, 255, 255, 0.7)", // Opacity to let image show
+    padding: 20,
+    justifyContent: "space-evenly",
+    backgroundColor: "rgba(244, 240, 231, 0.76)",
   },
   header: {
     marginTop: 10,
@@ -240,7 +237,7 @@ const styles = StyleSheet.create({
   badge: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#E8F5E9",
+    backgroundColor: theme.colors.accentSoft,
     alignSelf: "flex-start",
     paddingHorizontal: 10,
     paddingVertical: 4,
@@ -248,15 +245,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   badgeText: {
-    color: "#2E7D32",
+    color: theme.colors.accentStrong,
     fontWeight: "bold",
     fontSize: 11,
     marginLeft: 6,
   },
   title: {
-    fontSize: 32, // Slightly smaller font
+    fontSize: 32,
     fontWeight: "900",
-    color: "#1F2937",
+    color: theme.colors.secondary,
     marginBottom: 2,
     letterSpacing: -1,
   },
@@ -264,9 +261,9 @@ const styles = StyleSheet.create({
     color: theme.colors.primary,
   },
   subtitle: {
-    fontSize: 28, // Slightly smaller font
+    fontSize: 28,
     fontWeight: "800",
-    color: "#1F2937",
+    color: theme.colors.secondary,
     marginBottom: 12,
     letterSpacing: -1,
   },
@@ -280,23 +277,25 @@ const styles = StyleSheet.create({
   },
   metaText: {
     fontSize: 14,
-    color: "#4B5563",
+    color: theme.colors.text,
     marginLeft: 8,
     fontWeight: "500",
   },
   carouselContainer: {
     marginTop: 10,
-    marginHorizontal: -20, // Negative margin to allow strict flatlist scroll
+    marginHorizontal: -20,
   },
   flightCard: {
-    backgroundColor: "#fff",
-    borderRadius: 16,
+    backgroundColor: "rgba(255, 252, 246, 0.96)",
+    borderRadius: theme.borderRadius.xxl,
     padding: 16,
-    marginHorizontal: 20, // Add back margin for the card itself
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
+    marginHorizontal: 20,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+    shadowColor: theme.colors.shadow,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 1,
+    shadowRadius: 18,
     elevation: 2,
   },
   flightHeader: {
@@ -306,19 +305,19 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   airlineText: {
-    color: "#F97316",
+    color: theme.colors.accent,
     fontWeight: "bold",
     fontSize: 16,
   },
   roundTripBadge: {
-    backgroundColor: "#F3F4F6",
+    backgroundColor: theme.colors.surfaceMuted,
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 6,
   },
   roundTripText: {
     fontSize: 12,
-    color: "#6B7280",
+    color: theme.colors.textLight,
     fontWeight: "600",
   },
   flightRoute: {
@@ -333,11 +332,11 @@ const styles = StyleSheet.create({
   airportCode: {
     fontSize: 24,
     fontWeight: "900",
-    color: "#1F2937",
+    color: theme.colors.secondary,
   },
   airportName: {
     fontSize: 12,
-    color: "#6B7280",
+    color: theme.colors.textLight,
     marginTop: 2,
   },
   flightPath: {
@@ -348,26 +347,26 @@ const styles = StyleSheet.create({
   flightLine: {
     width: "100%",
     height: 1,
-    backgroundColor: "#E5E7EB",
+    backgroundColor: theme.colors.border,
     position: "absolute",
     top: 10,
     zIndex: -1,
   },
   flightDuration: {
     fontSize: 11,
-    color: "#9CA3AF",
+    color: theme.colors.textLight,
     marginTop: 4,
   },
   flightTimes: {
     flexDirection: "row",
     justifyContent: "space-between",
     borderTopWidth: 1,
-    borderTopColor: "#F3F4F6",
+    borderTopColor: theme.colors.border,
     paddingTop: 12,
   },
   timeText: {
     fontSize: 12,
-    color: "#4B5563",
+    color: theme.colors.text,
   },
   carouselIndicators: {
     flexDirection: "row",
@@ -379,9 +378,9 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: "rgba(255, 255, 255, 0.4)",
-    borderWidth: 1.5,
-    borderColor: "#9CA3AF",
+    backgroundColor: "rgba(255, 252, 246, 0.48)",
+    borderWidth: 1,
+    borderColor: theme.colors.border,
     marginHorizontal: 3,
   },
   dotActive: {
@@ -392,7 +391,7 @@ const styles = StyleSheet.create({
   },
   swipeHint: {
     fontSize: 11,
-    color: "#6B7280",
+    color: theme.colors.textLight,
     marginLeft: 8,
   },
   summaryContainer: {
@@ -400,50 +399,60 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   dayCard: {
-    backgroundColor: "#fff",
-    borderRadius: 10,
+    backgroundColor: "rgba(255, 252, 246, 0.96)",
+    borderRadius: theme.borderRadius.lg,
     padding: 12,
     borderTopWidth: 4,
-    shadowColor: "#000",
+    borderTopColor: theme.colors.primary,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+    shadowColor: theme.colors.shadow,
     shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.05,
+    shadowOpacity: 1,
     shadowRadius: 4,
     elevation: 1,
+  },
+  dayCardAccent: {
+    borderTopColor: theme.colors.accent,
   },
   dayTitle: {
     fontSize: 14,
     fontWeight: "bold",
+    color: theme.colors.primaryDeep,
     marginBottom: 4,
+  },
+  dayTitleAccent: {
+    color: theme.colors.accentStrong,
   },
   dayTheme: {
     fontSize: 15,
     fontWeight: "800",
-    color: "#1F2937",
+    color: theme.colors.secondary,
     marginBottom: 2,
   },
   dayDate: {
     fontSize: 11,
-    color: "#9CA3AF",
+    color: theme.colors.textLight,
     fontWeight: "normal",
   },
   dayDesc: {
     fontSize: 12,
     fontWeight: "600",
-    color: theme.colors.primary,
+    color: theme.colors.accentStrong,
   },
   enterButton: {
-    backgroundColor: theme.colors.primary,
+    backgroundColor: theme.colors.primaryDeep,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 14,
-    borderRadius: 12,
+    borderRadius: theme.borderRadius.xl,
     marginTop: 16,
-    marginBottom: 10, // Added bottom margin so it's not cut off by safe area bottom
-    shadowColor: theme.colors.primary,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+    marginBottom: 10,
+    shadowColor: theme.colors.shadow,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 1,
+    shadowRadius: 16,
     elevation: 3,
   },
   enterButtonText: {

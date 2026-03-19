@@ -10,8 +10,8 @@ import InfoScreen from "../screens/InfoScreen";
 import BudgetScreen from "../screens/BudgetScreen";
 import StoryScreen from "../screens/StoryScreen";
 import { theme } from "../constants/theme";
-import { TouchableOpacity, Platform, StyleSheet, Image } from "react-native";
-import { ChevronLeft, Home } from "lucide-react-native";
+import { TouchableOpacity, Platform, StyleSheet } from "react-native";
+import { Home } from "lucide-react-native";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -20,7 +20,7 @@ function MainTabs({ navigation }) {
   return (
     <Tab.Navigator
       backBehavior="history"
-      screenOptions={({ route, navigation: tabNav }) => ({
+      screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           if (route.name === "Schedule") {
             return <CalendarDays color={color} size={size} />;
@@ -33,14 +33,16 @@ function MainTabs({ navigation }) {
           }
         },
         tabBarActiveTintColor: theme.colors.primary,
-        tabBarInactiveTintColor: "gray",
+        tabBarInactiveTintColor: theme.colors.textLight,
         tabBarStyle: {
           height: 80,
           paddingBottom: 20,
           paddingTop: 8,
+          backgroundColor: theme.colors.surface,
+          borderTopColor: theme.colors.border,
         },
         headerStyle: {
-          backgroundColor: theme.colors.primary,
+          backgroundColor: theme.colors.primaryDeep,
         },
         headerTintColor: "#fff",
         headerTitleStyle: {
@@ -49,7 +51,7 @@ function MainTabs({ navigation }) {
         headerLeft: () => (
           <TouchableOpacity
             style={styles.headerButton}
-            onPress={() => tabNav.navigate("Cover")}
+            onPress={() => navigation.navigate("Home")}
           >
             <Home color="#fff" size={24} />
           </TouchableOpacity>
@@ -82,10 +84,17 @@ function MainTabs({ navigation }) {
 
 export default function AppNavigator() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Cover">
+    <NavigationContainer
+      documentTitle={{
+        formatter: (options, route) =>
+          options?.title
+            ? `${options.title} | 시즈오카 여행 플래너`
+            : "시즈오카 여행 플래너",
+      }}
+    >
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
-          name="Cover"
+          name="Home"
           component={CoverScreen}
           options={{ headerShown: false }}
         />

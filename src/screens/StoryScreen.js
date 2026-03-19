@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import {
   View,
   Text,
@@ -13,9 +13,78 @@ import { storyData } from "../data/storyData";
 
 const { width } = Dimensions.get("window");
 
-// For placeholder images, we'll use a reliable service
-const getImageUrl = (index) =>
-  `https://picsum.photos/seed/shizuoka${index}/800/600`;
+const carouselSlideWidth = width - theme.spacing.md * 2;
+
+function StoryImageCarousel({ images, itemId }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const syncPageFromOffset = useCallback(
+    (offsetX) => {
+      const page = Math.round(offsetX / carouselSlideWidth);
+      if (page >= 0 && page < images.length) {
+        setActiveIndex((prev) => (prev === page ? prev : page));
+      }
+    },
+    [images.length],
+  );
+
+  const onMomentumScrollEnd = useCallback(
+    (e) => {
+      syncPageFromOffset(e.nativeEvent.contentOffset.x);
+    },
+    [syncPageFromOffset],
+  );
+
+  const onScroll = useCallback(
+    (e) => {
+      syncPageFromOffset(e.nativeEvent.contentOffset.x);
+    },
+    [syncPageFromOffset],
+  );
+
+  const renderImage = useCallback(
+    ({ item: imgSource }) => (
+      <Image
+        source={imgSource}
+        style={styles.image}
+        resizeMode="cover"
+      />
+    ),
+    [],
+  );
+
+  return (
+    <View>
+      <FlatList
+        data={images}
+        renderItem={renderImage}
+        keyExtractor={(_, i) => `${itemId}-img-${i}`}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        style={styles.imageCarousel}
+        onMomentumScrollEnd={onMomentumScrollEnd}
+        onScrollEndDrag={onMomentumScrollEnd}
+        onScroll={onScroll}
+        scrollEventThrottle={16}
+        decelerationRate="fast"
+      />
+      {images.length > 1 && (
+        <View style={styles.carouselDotContainer}>
+          {images.map((_, i) => (
+            <View
+              key={`${itemId}-dot-${i}`}
+              style={[
+                styles.carouselDot,
+                i === activeIndex && styles.activeDot,
+              ]}
+            />
+          ))}
+        </View>
+      )}
+    </View>
+  );
+}
 
 export default function StoryScreen({ route }) {
   const flatListRef = useRef(null);
@@ -85,34 +154,10 @@ export default function StoryScreen({ route }) {
     });
   };
 
-  const renderImage = ({ item: imgSource }) => (
-    <Image source={imgSource} style={styles.image} resizeMode="cover" />
-  );
-
-  const renderStoryCard = ({ item, index }) => (
+  const renderStoryCard = ({ item }) => (
     <View style={styles.card}>
       {item.images && item.images.length > 0 ? (
-        <View>
-          <FlatList
-            data={item.images}
-            renderItem={renderImage}
-            keyExtractor={(_, i) => `${item.id}-img-${i}`}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            style={styles.imageCarousel}
-          />
-          {item.images.length > 1 && (
-            <View style={styles.carouselDotContainer}>
-              {item.images.map((_, i) => (
-                <View
-                  key={i}
-                  style={[styles.carouselDot, i === 0 && styles.activeDot]}
-                />
-              ))}
-            </View>
-          )}
-        </View>
+        <StoryImageCarousel images={item.images} itemId={item.id} />
       ) : (
         <View style={[styles.image, styles.placeholderImage]}>
           <Text style={styles.placeholderText}>{item.imagePlaceholder}</Text>
@@ -159,7 +204,7 @@ export default function StoryScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f0f4f8", // Slightly tinted background for contrast with white cards
+    backgroundColor: theme.colors.background,
   },
   listContent: {
     padding: theme.spacing.md,
@@ -169,18 +214,18 @@ const styles = StyleSheet.create({
     borderRadius: theme.borderRadius.lg,
     marginBottom: theme.spacing.lg,
     overflow: "hidden",
-    borderWidth: 2, // Bolder border
-    borderColor: "#B7E4C7",
+    borderWidth: 1,
+    borderColor: theme.colors.border,
     elevation: 5,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
+    shadowColor: theme.colors.shadow,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 1,
+    shadowRadius: 18,
   },
   image: {
-    width: width - theme.spacing.md * 2, // Full width of the card
+    width: width - theme.spacing.md * 2,
     height: 250,
-    backgroundColor: "#e1e4e8",
+    backgroundColor: theme.colors.surfaceMuted,
   },
   imageCarousel: {
     width: "100%",
@@ -208,7 +253,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 3,
   },
   activeDot: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: theme.colors.surface,
     width: 12,
   },
   content: {
@@ -228,10 +273,10 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 14,
-    color: theme.colors.primary,
+    color: theme.colors.accentStrong,
     fontWeight: "600",
     marginBottom: theme.spacing.sm,
-    paddingLeft: 28, // Align with title text
+    paddingLeft: 28,
   },
   divider: {
     height: 1,
@@ -272,7 +317,7 @@ const styles = StyleSheet.create({
   },
   tableHeader: {
     flexDirection: "row",
-    backgroundColor: "#FFEDF0",
+    backgroundColor: theme.colors.accentSoft,
     borderBottomWidth: 1,
     borderBottomColor: theme.colors.border,
     paddingVertical: 8,
@@ -287,7 +332,7 @@ const styles = StyleSheet.create({
   tableRow: {
     flexDirection: "row",
     borderBottomWidth: 1,
-    borderBottomColor: "#F3F4F6",
+    borderBottomColor: theme.colors.border,
     paddingVertical: 8,
   },
   tableCellText: {

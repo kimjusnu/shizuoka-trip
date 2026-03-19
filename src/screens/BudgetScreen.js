@@ -51,16 +51,16 @@ const styles = StyleSheet.create({
     padding: theme.spacing.md,
   },
   summaryCard: {
-    backgroundColor: theme.colors.primary,
+    backgroundColor: theme.colors.primaryDeep,
     borderRadius: theme.borderRadius.md,
     padding: theme.spacing.lg,
     alignItems: "center",
     marginBottom: theme.spacing.lg,
     elevation: 3,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.15,
-    shadowRadius: 4,
+    shadowColor: theme.colors.shadow,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 1,
+    shadowRadius: 16,
   },
   summaryTitle: {
     color: "rgba(255, 255, 255, 0.8)",
@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
     borderRadius: theme.borderRadius.md,
     padding: theme.spacing.md,
     marginBottom: theme.spacing.md,
-    borderWidth: 2, // Bolder border
-    borderColor: "#B7E4C7",
+    borderWidth: 1,
+    borderColor: theme.colors.border,
   },
   dayTitle: {
     fontSize: 18,
@@ -122,12 +122,12 @@ const styles = StyleSheet.create({
     marginTop: 12,
     paddingTop: 12,
     borderTopWidth: 1,
-    borderTopColor: "#E5E7EB",
+    borderTopColor: theme.colors.border,
   },
   totalLabel: {
     fontSize: 15,
     fontWeight: "bold",
-    color: "#374151",
+    color: theme.colors.secondary,
   },
   totalAmount: {
     fontSize: 17,

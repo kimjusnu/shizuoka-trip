@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "shizuoka-trip",
+    "name": "시즈오카 여행 플래너",
     "slug": "shizuoka-trip",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,22 +19,21 @@
       }
     },
     "android": {
+      "icon": "./assets/AppIcon.png",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "foregroundImage": "./assets/AppIcon.png",
+        "backgroundColor": "#ffffff"
       },
       "package": "com.junsu.shizuokatrip"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
+      "favicon": "./assets/AppIcon.png",
       "themeColor": "#52B788",
       "backgroundColor": "#ffffff",
       "display": "standalone",
       "description": "시즈오카 2박 3일 여행 플래너",
-      "name": "시즈오카 여행",
-      "shortName": "시즈오카"
+      "name": "시즈오카 여행 플래너",
+      "shortName": "시즈오카 플래너"
     },
     "plugins": ["expo-font"],
     "extra": {

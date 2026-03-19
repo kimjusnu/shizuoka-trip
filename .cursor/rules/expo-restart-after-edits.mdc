@@ -1,0 +1,15 @@
+---
+description: After code/config changes, restart Expo web dev server
+globs: "**/*.{js,jsx,ts,tsx,json}"
+alwaysApply: true
+---
+
+# shizuoka-trip — 수정 후 Expo 재시작
+
+이 저장소에서 **코드나 `app.json` 등 설정 수정을 마치면**, 사용자 요청이 없어도 **항상** 개발 서버를 재시작한다.
+
+1. 실행 중인 `npm run web` / `expo start --web` 프로세스와 **8081** 포트 사용 프로세스를 종료한다.
+2. 프로젝트 루트에서 `npm run web`을 다시 백그라운드로 실행한다.
+3. 사용자에게 `http://localhost:8081`에서 새로고침하라고 짧게 안내한다.
+
+**빈 `CI=` 환경변수는 넣지 않는다** (Expo CLI 오류 방지).

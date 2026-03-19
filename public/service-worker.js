@@ -1,12 +1,12 @@
-const CACHE_NAME = "shizuoka-trip-v4";
+const CACHE_NAME = "shizuoka-trip-v5";
 
 const PRECACHE_ASSETS = [
   "./",
   "./index.html",
   "./manifest.json",
+  "./AppIcon.png",
+  "./SplashImage.png",
   "./favicon.ico",
-  "./icon.png",
-  "./_expo/static/js/web/index-f3ab163b3664a864df7043885f75360e.js",
 ];
 
 self.addEventListener("install", (event) => {

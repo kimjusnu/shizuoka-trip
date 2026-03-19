@@ -11,7 +11,6 @@ import {
   Square,
   Plane,
   Briefcase,
-  MessageCircle,
   Copy,
   Check,
 } from "lucide-react-native";
@@ -118,14 +117,14 @@ export default function InfoScreen() {
               onPress={() => copyToClipboard(p.ticket, index)}
             >
               {copiedIndex === index ? (
-                <Check color="#52B788" size={16} />
+                <Check color={theme.colors.primary} size={16} />
               ) : (
                 <Copy color={theme.colors.primary} size={16} />
               )}
               <Text
                 style={[
                   styles.copyText,
-                  copiedIndex === index && { color: "#52B788" },
+                  copiedIndex === index && { color: theme.colors.primary },
                 ]}
               >
                 {copiedIndex === index ? "복사됨" : "복사"}
@@ -160,18 +159,17 @@ export default function InfoScreen() {
         ))}
       </View>
 
-      {/* Phrases Section */}
       <View style={[styles.card, { marginBottom: theme.spacing.xl }]}>
-        {renderSectionHeader(
-          "짧은 일본어 메모",
-          <MessageCircle color={theme.colors.primary} size={24} />,
-        )}
+        <Text style={styles.phrasesSectionTitle}>짧은 일본어 메모</Text>
         {infoData.phrases.map((phrase, index) => (
           <View key={index} style={styles.phraseItem}>
             <Text style={styles.phraseKr}>{phrase.kr}</Text>
             <Text style={styles.phraseJp} selectable>
               {phrase.jp}
             </Text>
+            {phrase.read ? (
+              <Text style={styles.phraseParen}>({phrase.read})</Text>
+            ) : null}
           </View>
         ))}
       </View>
@@ -192,12 +190,12 @@ const styles = StyleSheet.create({
     borderRadius: theme.borderRadius.md,
     padding: theme.spacing.md,
     marginBottom: theme.spacing.md,
-    borderWidth: 2, // Bolder border
-    borderColor: "#B7E4C7",
+    borderWidth: 1,
+    borderColor: theme.colors.border,
     elevation: 2,
-    shadowColor: "#000",
+    shadowColor: theme.colors.shadow,
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 1,
     shadowRadius: 4,
   },
   sectionHeader: {
@@ -246,14 +244,14 @@ const styles = StyleSheet.create({
   copyButton: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#F0F0F0",
+    backgroundColor: theme.colors.surfaceMuted,
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 6,
     marginLeft: 8,
   },
   copyButtonDone: {
-    backgroundColor: "#D8F3DC", // 연한 초록 배경
+    backgroundColor: theme.colors.primarySoft,
   },
   copyText: {
     fontSize: 12,
@@ -276,21 +274,34 @@ const styles = StyleSheet.create({
     textDecorationLine: "line-through",
     color: theme.colors.textLight,
   },
-  phraseItem: {
-    backgroundColor: "#f8f9fa",
-    padding: theme.spacing.md,
-    borderRadius: theme.borderRadius.sm,
+  phrasesSectionTitle: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: theme.colors.secondary,
     marginBottom: theme.spacing.sm,
+  },
+  phraseItem: {
+    paddingVertical: 10,
+    marginBottom: 4,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: theme.colors.border,
   },
   phraseKr: {
     fontSize: 14,
-    fontWeight: "600",
-    color: theme.colors.primary,
+    color: theme.colors.text,
     marginBottom: 4,
+    lineHeight: 20,
   },
   phraseJp: {
-    fontSize: 16,
+    fontSize: 15,
     color: theme.colors.text,
     fontWeight: "500",
+    lineHeight: 22,
+    marginBottom: 2,
+  },
+  phraseParen: {
+    fontSize: 13,
+    color: theme.colors.textLight,
+    lineHeight: 20,
   },
 });
